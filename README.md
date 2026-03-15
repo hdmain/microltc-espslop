@@ -7,3 +7,5 @@ download
 
 # preview
 ![startpage](imgs/startpage.jpg)
+![wallet](imgs/wallet.png)
+![charts](imgs/chartespsettings.jpg)
