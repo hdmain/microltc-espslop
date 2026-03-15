@@ -6,4 +6,4 @@ download
 [debian/based on debian](https://github.com/hdmain/microltc-espslop/raw/refs/heads/main/walletlinux.deb) 
 
 # preview
-![startpage](imgs/startpage.jpeg)
+![startpage](imgs/startpage.jpg)
