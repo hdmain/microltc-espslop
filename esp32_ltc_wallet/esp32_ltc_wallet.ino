@@ -242,6 +242,20 @@ void cmdAddTx(String address, String status, String amount, String timestamp) {
   Serial.println("OK");
 }
 
+void cmdListTx() {
+  prefs.begin(NVS_NAMESPACE, true);
+  for (int i = 0; i < TX_MAX; i++) {
+    String key = "tx" + String(i);
+    String val = prefs.getString(key.c_str(), "");
+    if (val.length() > 0) {
+      Serial.print("TX,");
+      Serial.println(val);
+    }
+  }
+  prefs.end();
+  Serial.println("OK");
+}
+
 void setup() {
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
@@ -308,6 +322,8 @@ void loop() {
               } else {
                 Serial.println("ERR,ADD_TX needs address,status,amount,timestamp");
               }
+            } else if (cmd == "LIST_TX") {
+              cmdListTx();
             } else {
               Serial.println("ERR,unknown command");
             }
